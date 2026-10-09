@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Data Solutions</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232563eb' width='100' height='100'/><text x='50' y='65' font-size='60' fill='white' text-anchor='middle' font-weight='bold'>D</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                    <span class="text-white text-2xl font-bold">Data Solutions</span>
+                </div>
+                <button class="md:hidden text-white focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-white hover:text-blue-200 font-semibold transition">Home</a>
+                    <a href="about.html" class="text-white hover:text-blue-200 font-semibold transition">About</a>
+                    <a href="contact.html" class="text-white hover:text-blue-200 font-semibold transition">Contact</a>
+                    <a href="signin.html" class="text-white hover:text-blue-200 font-semibold transition">Sign In</a>
+                    <a href="signup.html" class="text-white hover:text-blue-200 font-semibold transition">Sign Up</a>
+                </div>
+            </div>
+            <div class="hidden md:hidden pb-4" id="mobile-menu">
+                <a href="../index.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Home</a>
+                <a href="about.html" class="block text-white hover:text-blue-200 py-2 font-semibold">About</a>
+                <a href="contact.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Contact</a>
+                <a href="signin.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Sign In</a>
+                <a href="signup.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-md">
+            <!-- Welcome Card -->
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <!-- Header Section with Icon -->
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 px-6 py-8 text-center">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-user-circle text-3xl text-blue-600"></i>
+                    </div>
+                    <h1 class="text-3xl font-bold text-white">Welcome Back</h1>
+                    <p class="text-blue-100 mt-2">Sign in to your Data Solutions account</p>
+                </div>
+
+                <!-- Form Section -->
+                <div class="px-6 py-8">
+                    <form id="signinForm" class="space-y-6">
+                        <!-- Email Input with Icon -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <div class="relative">
+                                <i class="fas fa-envelope absolute left-4 top-3.5 text-blue-600"></i>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 transition"
+                                    placeholder="your@email.com"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Password Input with Icon -->
+                        <div>
+                            <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+                            <div class="relative">
+                                <i class="fas fa-lock absolute left-4 top-3.5 text-blue-600"></i>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    required
+                                    class="w-full pl-10 pr-12 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 transition"
+                                    placeholder="••••••••"
+                                >
+                                <button
+                                    type="button"
+                                    class="absolute right-4 top-3.5 text-gray-600 hover:text-blue-600 transition"
+                                    onclick="togglePassword()"
+                                >
+                                    <i class="fas fa-eye" id="eyeIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Remember Me Checkbox -->
+                        <div class="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="remember"
+                                name="remember"
+                                class="w-4 h-4 text-blue-600 rounded focus:ring-blue-600 cursor-pointer"
+                            >
+                            <label for="remember" class="ml-2 text-sm text-gray-700 cursor-pointer">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <!-- Info Alert Component -->
+                        <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                            <div class="flex items-start">
+                                <i class="fas fa-info-circle text-blue-600 mr-3 mt-0.5"></i>
+                                <p class="text-sm text-gray-700">
+                                    Use your registered email and password to access your account.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button with Loading State -->
+                        <button
+                            type="submit"
+                            class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                        >
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Sign In</span>
+                        </button>
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="relative my-8">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t-2 border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-600">Or continue with</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Login Buttons -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <button
+                            type="button"
+                            class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg transition flex items-center justify-center space-x-2"
+                        >
+                            <i class="fab fa-google text-red-500"></i>
+                            <span class="hidden sm:inline text-sm">Google</span>
+                        </button>
+                        <button
+                            type="button"
+                            class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg transition flex items-center justify-center space-x-2"
+                        >
+                            <i class="fab fa-github text-gray-800"></i>
+                            <span class="hidden sm:inline text-sm">GitHub</span>
+                        </button>
+                        <button
+                            type="button"
+                            class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg transition flex items-center justify-center space-x-2"
+                        >
+                            <i class="fab fa-microsoft text-blue-600"></i>
+                            <span class="hidden sm:inline text-sm">Microsoft</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="bg-gray-50 px-6 py-6 border-t border-gray-200">
+                    <div class="space-y-3">
+                        <a href="#" class="block text-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition">
+                            Forgot your password?
+                        </a>
+                        <p class="text-center text-sm text-gray-700">
+                            Don't have an account?
+                            <a href="signup.html" class="text-blue-600 hover:text-blue-800 font-semibold transition">
+                                Sign up here
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Features Section -->
+            <div class="mt-8 grid grid-cols-3 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow-md text-center hover:shadow-lg transition">
+                    <i class="fas fa-lock text-2xl text-green-600 mb-2"></i>
+                    <p class="text-xs font-semibold text-gray-700">Secure Login</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-md text-center hover:shadow-lg transition">
+                    <i class="fas fa-shield-alt text-2xl text-green-600 mb-2"></i>
+                    <p class="text-xs font-semibold text-gray-700">256-bit SSL</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-md text-center hover:shadow-lg transition">
+                    <i class="fas fa-user-shield text-2xl text-green-600 mb-2"></i>
+                    <p class="text-xs font-semibold text-gray-700">2FA Available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 px-4 mt-12">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">Data Solutions</h3>
+                <p class="text-sm">Transforming businesses through data-driven insights and advanced analytics.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Products</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Analytics Platform</a></li>
+                    <li><a href="#" class="hover:text-white transition">ML Suite</a></li>
+                    <li><a href="#" class="hover:text-white transition">Data Pipeline</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Company</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white transition">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex justify-between items-center">
+                <p class="text-sm">&copy; 2024 Data Solutions. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('signinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                alert('Sign in successful! (Demo mode - no actual authentication)');
+                console.log('Email:', email);
+                console.log('Remember me:', document.getElementById('remember').checked);
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
