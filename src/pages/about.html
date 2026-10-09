@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Data Solutions</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232563eb' width='100' height='100'/><text x='50' y='65' font-size='60' fill='white' text-anchor='middle' font-weight='bold'>D</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                    <span class="text-white text-2xl font-bold">Data Solutions</span>
+                </div>
+                <button class="md:hidden text-white focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-white hover:text-blue-200 font-semibold transition">Home</a>
+                    <a href="about.html" class="text-white hover:text-blue-200 font-semibold transition">About</a>
+                    <a href="contact.html" class="text-white hover:text-blue-200 font-semibold transition">Contact</a>
+                    <a href="signin.html" class="text-white hover:text-blue-200 font-semibold transition">Sign In</a>
+                    <a href="signup.html" class="text-white hover:text-blue-200 font-semibold transition">Sign Up</a>
+                </div>
+            </div>
+            <div class="hidden md:hidden pb-4" id="mobile-menu">
+                <a href="../index.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Home</a>
+                <a href="about.html" class="block text-white hover:text-blue-200 py-2 font-semibold">About</a>
+                <a href="contact.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Contact</a>
+                <a href="signin.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Sign In</a>
+                <a href="signup.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-5xl font-bold text-blue-900 mb-4">About Data Solutions</h1>
+            <p class="text-xl text-gray-700">Leading the industry in data science innovation and business intelligence solutions.</p>
+        </div>
+    </section>
+
+    <!-- Company Story Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6 text-blue-900">Our Story</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">Founded in 2012, Data Solutions began with a simple mission: to help businesses unlock the power of their data. What started as a small team of data scientists has grown into a global leader in data analytics and machine learning solutions.</p>
+                <p class="text-gray-700 mb-4 leading-relaxed">Today, we work with Fortune 500 companies, innovative startups, and government agencies to transform raw data into actionable insights that drive real business results.</p>
+                <p class="text-gray-700 leading-relaxed">Our commitment to excellence, innovation, and client success has made us the trusted partner for organizations looking to compete in the data-driven economy.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Team collaboration" class="rounded-lg shadow-2xl">
+        </div>
+    </section>
+
+    <!-- Mission & Vision Cards -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">Mission & Vision</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-bullseye text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Our Mission</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">To empower organizations with data-driven intelligence, enabling them to make informed decisions, optimize operations, and achieve sustainable growth through cutting-edge analytics and machine learning solutions.</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-indigo-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-eye text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Our Vision</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">To be the world's most trusted data science company, recognized for delivering exceptional value, innovation, and impact in every industry and market we serve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">Core Values</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-6 border-2 border-blue-200 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-lightbulb text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Innovation</h3>
+                    <p class="text-gray-700 text-sm">We continuously push boundaries to develop cutting-edge solutions.</p>
+                </div>
+                <div class="text-center p-6 border-2 border-blue-200 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-handshake text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Integrity</h3>
+                    <p class="text-gray-700 text-sm">We operate with honesty, transparency, and ethical principles.</p>
+                </div>
+                <div class="text-center p-6 border-2 border-blue-200 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-users text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Collaboration</h3>
+                    <p class="text-gray-700 text-sm">We believe in the power of teamwork and partnership.</p>
+                </div>
+                <div class="text-center p-6 border-2 border-blue-200 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-chart-line text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Excellence</h3>
+                    <p class="text-gray-700 text-sm">We strive for the highest standards in everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">Our Leadership Team</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <img src="https://i.pravatar.cc/300?img=10" alt="CEO" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Dr. James Mitchell</h3>
+                        <p class="text-blue-600 font-semibold mb-4">Chief Executive Officer</p>
+                        <p class="text-gray-700 text-sm">Former data science director at leading tech companies with 15+ years of experience.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <img src="https://i.pravatar.cc/300?img=11" alt="CTO" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Emily Rodriguez</h3>
+                        <p class="text-blue-600 font-semibold mb-4">Chief Technology Officer</p>
+                        <p class="text-gray-700 text-sm">ML engineer and researcher specializing in deep learning and NLP solutions.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <img src="https://i.pravatar.cc/300?img=12" alt="CFO" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Michael Chen</h3>
+                        <p class="text-blue-600 font-semibold mb-4">Chief Financial Officer</p>
+                        <p class="text-gray-700 text-sm">Finance expert with proven track record in scaling tech companies globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">Company Milestones</h2>
+            <div class="space-y-8">
+                <div class="flex gap-6 items-start">
+                    <div class="w-24 text-right">
+                        <span class="bg-blue-600 text-white px-4 py-2 rounded-full font-bold inline-block">2012</span>
+                    </div>
+                    <div class="flex-1 border-l-4 border-blue-600 pl-6 pb-8">
+                        <h3 class="text-2xl font-bold mb-2">Company Founded</h3>
+                        <p class="text-gray-700">Data Solutions was established with a vision to revolutionize data analytics.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="w-24 text-right">
+                        <span class="bg-blue-600 text-white px-4 py-2 rounded-full font-bold inline-block">2015</span>
+                    </div>
+                    <div class="flex-1 border-l-4 border-blue-600 pl-6 pb-8">
+                        <h3 class="text-2xl font-bold mb-2">100+ Clients Milestone</h3>
+                        <p class="text-gray-700">Expanded team to 50+ data professionals and opened international offices.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="w-24 text-right">
+                        <span class="bg-blue-600 text-white px-4 py-2 rounded-full font-bold inline-block">2018</span>
+                    </div>
+                    <div class="flex-1 border-l-4 border-blue-600 pl-6 pb-8">
+                        <h3 class="text-2xl font-bold mb-2">AI Platform Launch</h3>
+                        <p class="text-gray-700">Launched proprietary AI platform for automated machine learning and insights.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="w-24 text-right">
+                        <span class="bg-blue-600 text-white px-4 py-2 rounded-full font-bold inline-block">2022</span>
+                    </div>
+                    <div class="flex-1 border-l-4 border-blue-600 pl-6">
+                        <h3 class="text-2xl font-bold mb-2">Global Expansion</h3>
+                        <p class="text-gray-700">Reached 500+ projects completed and expanded to 20+ countries worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Badge Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 py-16 px-4 text-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-center">
+            <div class="bg-white bg-opacity-10 rounded-lg p-8 backdrop-blur">
+                <h3 class="text-5xl font-bold mb-2">12+</h3>
+                <p class="text-xl">Years in Business</p>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-lg p-8 backdrop-blur">
+                <h3 class="text-5xl font-bold mb-2">500+</h3>
+                <p class="text-xl">Successful Projects</p>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-lg p-8 backdrop-blur">
+                <h3 class="text-5xl font-bold mb-2">150+</h3>
+                <p class="text-xl">Team Members</p>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-lg p-8 backdrop-blur">
+                <h3 class="text-5xl font-bold mb-
