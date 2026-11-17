@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - Data Solutions</title>
+<link rel="icon" type="image/png" href=" ../assets/favicon/signup.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                    <span class="text-white text-2xl font-bold">Data Solutions</span>
+                </div>
+                <button class="md:hidden text-white focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../../index.html" class="text-white hover:text-blue-200 font-semibold transition">Home</a>
+                    <a href="about.html" class="text-white hover:text-blue-200 font-semibold transition">About</a>
+                    <a href="contact.html" class="text-white hover:text-blue-200 font-semibold transition">Contact</a>
+                    <a href="signin.html" class="text-white hover:text-blue-200 font-semibold transition">Sign In</a>
+                    <a href="signup.html" class="text-white hover:text-blue-200 font-semibold transition">Sign Up</a>
+ <a href="datamanager.html" class="text-white hover:text-blue-200 font-semibold transition">Data Manager</a>
+                </div>
+            </div>
+            <div class="hidden md:hidden pb-4" id="mobile-menu">
+                <a href="../../index.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Home</a>
+                <a href="about.html" class="block text-white hover:text-blue-200 py-2 font-semibold">About</a>
+                <a href="contact.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Contact</a>
+                <a href="signin.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Sign In</a>
+                <a href="signup.html" class="block text-white hover:text-blue-200 py-2 font-semibold">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-5xl font-bold text-blue-900 mb-4">Record Manager</h1>
+        </div>
+    </section>
+
+    <style>
+    :root {
+      font-family: Arial, sans-serif;
+      color: #202938;
+      background: #f3f6fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px 16px;
+    }
+
+    main {
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    section {
+      margin: 22px 0;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid #e0e6ef;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px #1829440d;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    form,
+    .search-area {
+      display: grid;
+      gap: 12px;
+    }
+
+    input {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    button {
+      padding: 10px 14px;
+      color: #fff;
+      background: #1769aa;
+      border: 0;
+      border-radius: 7px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #10558c;
+    }
+
+    button.secondary {
+      color: #263447;
+      background: #e7edf4;
+    }
+
+    button.delete {
+      background: #b42318;
+    }
+
+    .form-buttons,
+    .record-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .search-area {
+      margin-top: 20px;
+    }
+
+    #record-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .record-card {
+      padding: 16px;
+      border: 1px solid #e0e6ef;
+      border-radius: 8px;
+    }
+
+    .record-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .record-card p {
+      margin: 0 0 12px;
+      color: #526174;
+    }
+
+    .muted {
+      color: #64748b;
+    }
+
+    #record-status {
+      min-height: 1.3em;
+      color: #17633b;
+    }
+
+    .weather-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .weather-item {
+      padding: 14px;
+      background: #f3f7fc;
+      border-radius: 8px;
+    }
+
+    .weather-item span {
+      display: block;
+      margin-top: 6px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    @media (min-width: 600px) {
+      form {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .form-buttons {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <main>
+
+    <section aria-labelledby="form-heading">
+      <h2 id="form-heading">Add or Edit a Record</h2>
+
+      <form id="record-form">
+        <input id="record-name" type="text" placeholder="Name" aria-label="Name" required>
+        <input id="record-title" type="text" placeholder="Title" aria-label="Title" required>
+        <input id="record-category" type="text" placeholder="Category" aria-label="Category" required>
+
+        <div class="form-buttons">
+          <button id="save-button" type="submit">Add Record</button>
+          <button id="cancel-button" class="secondary" type="button" hidden>Cancel Edit</button>
+        </div>
+      </form>
+
+      <p id="record-status" role="status" aria-live="polite"></p>
+
+      <div class="search-area">
+        <label for="search-input">Search by name, title, or category</label>
+        <input id="search-input" type="search" placeholder="Type to search records">
+      </div>
+
+      <div id="record-list"></div>
+    </section>
+
+    <section aria-labelledby="weather-heading">
+      <h2 id="weather-heading">Lahore, Pakistan Weather</h2>
+      <p class="muted">Current conditions from Open-Meteo</p>
+      <button id="refresh-weather" type="button">Refresh Weather</button>
+      <div id="weather-result" aria-live="polite">Loading weather…</div>
+    </section>
+  </main>
+
+  <!-- Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    const STORAGE_KEY = "webtechAssignmentRecords";
+
+    let records = loadRecords();
+    let editingId = null;
+
+    const form = document.querySelector("#record-form");
+    const nameInput = document.querySelector("#record-name");
+    const titleInput = document.querySelector("#record-title");
+    const categoryInput = document.querySelector("#record-category");
+    const searchInput = document.querySelector("#search-input");
+    const recordList = document.querySelector("#record-list");
+    const recordStatus = document.querySelector("#record-status");
+    const saveButton = document.querySelector("#save-button");
+    const cancelButton = document.querySelector("#cancel-button");
+
+    function loadRecords() {
+      try {
+        const savedRecords = localStorage.getItem(STORAGE_KEY);
+        const parsedRecords = savedRecords ? JSON.parse(savedRecords) : [];
+        return Array.isArray(parsedRecords) ? parsedRecords : [];
+      } catch (error) {
+        console.error("Could not read saved records:", error);
+        return [];
+      }
+    }
+
+    function saveRecords() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+    }
+
+    function renderRecords(searchTerm = "") {
+      const query = searchTerm.trim().toLowerCase();
+
+      // filter() searches records; some() checks each searchable field.
+      const matchingRecords = records.filter((record) =>
+        [record.name, record.title, record.category].some((field) =>
+          field.toLowerCase().includes(query)
+        )
+      );
+
+      // map() creates a card for each matching record.
+      const cards = matchingRecords.map((record) => {
+        const card = document.createElement("article");
+        card.className = "record-card";
+
+        const heading = document.createElement("h3");
+        heading.textContent = record.name;
+
+        const details = document.createElement("p");
+        details.textContent = `${record.title} · ${record.category}`;
+
+        const actions = document.createElement("div");
+        actions.className = "record-actions";
+
+        const editButton = document.createElement("button");
+        editButton.type = "button";
+        editButton.className = "secondary";
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", () => editRecord(record.id));
+
+        const deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className = "delete";
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", () => deleteRecord(record.id));
+
+        actions.append(editButton, deleteButton);
+        card.append(heading, details, actions);
+        return card;
+      });
+
+      recordList.replaceChildren(...cards);
+
+      if (matchingRecords.length === 0) {
+        const emptyMessage = document.createElement("p");
+        emptyMessage.className = "muted";
+        emptyMessage.textContent = records.length
+          ? "No records match your search."
+          : "No records yet. Add one using the form above.";
+        recordList.appendChild(emptyMessage);
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = nameInput.value.trim();
+      const title = titleInput.value.trim();
+      const category = categoryInput.value.trim();
+
+      // every() checks that all form fields contain a value.
+      if (![name, title, category].every(Boolean)) {
+        recordStatus.textContent = "Please fill in all fields.";
+        return;
+      }
+
+      if (editingId !== null) {
+        // find() locates the record to update.
+        const record = records.find((item) => item.id === editingId);
+        if (record) {
+          record.name = name;
+          record.title = title;
+          record.category = category;
+        }
+        recordStatus.textContent = "Record updated.";
+      } else {
+        records.push({
+          id: createId(),
+          name,
+          title,
+          category
+        });
+        recordStatus.textContent = "Record added.";
+      }
+
+      saveRecords();
+      form.reset();
+      editingId = null;
+      saveButton.textContent = "Add Record";
+      cancelButton.hidden = true;
+      renderRecords(searchInput.value);
+    });
+
+    function createId() {
+      return (window.crypto && crypto.randomUUID)
+        ? crypto.randomUUID()
+        : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    }
+
+    function editRecord(id) {
+      const record = records.find((item) => item.id === id);
+      if (!record) return;
+
+      editingId = id;
+      nameInput.value = record.name;
+      titleInput.value = record.title;
+      categoryInput.value = record.category;
+      saveButton.textContent = "Save Changes";
+      cancelButton.hidden = false;
+      nameInput.focus();
+      recordStatus.textContent = "Editing record.";
+    }
+
+    function deleteRecord(id) {
+      records = records.filter((record) => record.id !== id);
+      saveRecords();
+      renderRecords(searchInput.value);
+      recordStatus.textContent = "Record deleted.";
+    }
+
+    cancelButton.addEventListener("click", () => {
+      editingId = null;
+      form.reset();
+      saveButton.textContent = "Add Record";
+      cancelButton.hidden = true;
+      recordStatus.textContent = "Edit cancelled.";
+    });
+
+    searchInput.addEventListener("input", () => {
+      renderRecords(searchInput.value);
+    });
+
+    renderRecords();
+
+    async function loadWeather() {
+      const weatherResult = document.querySelector("#weather-result");
+      weatherResult.textContent = "Loading weather…";
+
+      try {
+        const response = await axios.get("https://api.open-meteo.com/v1/forecast", {
+          params: {
+            latitude: 31.5204,
+            longitude: 74.3587,
+            current: "temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m",
+            timezone: "Asia/Karachi"
+          }
+        });
+
+        const current = response.data.current;
+        const units = response.data.current_units;
+
+        const weatherGrid = document.createElement("div");
+        weatherGrid.className = "weather-grid";
+
+        const weatherDetails = [
+          ["Temperature", `${current.temperature_2m} ${units.temperature_2m}`],
+          ["Feels like", `${current.apparent_temperature} ${units.apparent_temperature}`],
+          ["Humidity", `${current.relative_humidity_2m} ${units.relative_humidity_2m}`],
+          ["Wind speed", `${current.wind_speed_10m} ${units.wind_speed_10m}`],
+          ["Updated", current.time]
+        ];
+
+        weatherDetails.forEach(([label, value]) => {
+          const item = document.createElement("div");
+          item.className = "weather-item";
+
+          const title = document.createElement("div");
+          title.textContent = label;
+
+          const detail = document.createElement("span");
+          detail.textContent = value;
+
+          item.append(title, detail);
+          weatherGrid.appendChild(item);
+        });
+
+        weatherResult.replaceChildren(weatherGrid);
+      } catch (error) {
+        console.error("Weather request failed:", error);
+        weatherResult.textContent = "Weather could not be loaded. Please try again.";
+      }
+    }
+
+    document
+      .querySelector("#refresh-weather")
+      .addEventListener("click", loadWeather);
+
+    loadWeather();
+  </script>
+</body>
+</html>
